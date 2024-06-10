@@ -1,7 +1,19 @@
 #include <iostream>
 using namespace std;
 
-int max_island_area(int *matrix, int *rows, int *cols) {
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+
+    const int rows = 5;
+    const int cols = 5;
+    int matrix[rows][cols]{
+        { 0, 1, 0, 0, 0 },
+        { 1, 1, 0, 1, 0 },
+        { 0, 1, 0, 1, 1 },
+        { 0, 1, 0, 1, 0 },
+        { 0, 0, 0, 0, 0 }
+    };
 
     int max_area = 0;
 
@@ -30,23 +42,8 @@ int max_island_area(int *matrix, int *rows, int *cols) {
             }
         }
     }
-    return max_area;
-}
-
-int main() {
-    setlocale(LC_ALL, "Russian");
-
-    const int rows = 5;
-    const int cols = 5;
-    int matrix[rows][cols]{
-        { 0, 1, 0, 0, 0 },
-        { 1, 1, 0, 1, 0 },
-        { 0, 1, 0, 1, 1 },
-        { 0, 1, 0, 1, 0 },
-        { 0, 0, 0, 0, 0 }
-    };
 
 
-    cout << "Максимальная площадь острова: " << max_island_area(matrix, rows, cols);
+    cout << "Максимальная площадь острова: " << max_area;
     return 0;
 }
